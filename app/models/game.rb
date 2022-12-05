@@ -4,6 +4,6 @@ class Game
   GESTURES = %w(rock paper scissors)
 
   def self.winner(player1, player2)
-    player1.beats?(player2) ? player1.name : player2.name
+    player1.beats?(player2) ? player1 : player2
   end
 end

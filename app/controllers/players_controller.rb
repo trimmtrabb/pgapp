@@ -6,11 +6,11 @@ class PlayersController < ApplicationController
     if Game::GESTURES.include?(move)
       user = Player.new(name: "User", move: move)
       server = Player.new(name: "Server", move: get_server_move)
-      result = { user_move: user.move,
-                      server_move: server.move,
-                      winner: Game.winner(user, server) }
+      result = { result: "The winner is #{Game.winner(user, server).name}!", 
+                 details: { user_move: user.move,
+                            server_move: server.move } }
       flash[:result] = result
-      render "game/index" # template rendering only in Network tab!
+      redirect_to root_url # template rendering only in Network tab!
     # else # not tested
     #   flash.now[:alert] =
     #     "Unknown gesture: #{move}. Please choose from: #{Game::GESTURES.join(, )}."
