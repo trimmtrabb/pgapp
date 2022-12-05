@@ -1,9 +1,9 @@
 class Player < Game
-  attr_accessor :move
+  attr_accessor :name, :move
   validates :move, inclusion: { in: GESTURES }
 
-  # Player.new(move: 'rock')
-  # Player.new(move: 'paper')
+  # Player.new(name: 'User', move: 'rock')
+  # Player.new(name: 'Server', move: 'paper')
   def beats?(opponent)
     case move
     when 'rock'

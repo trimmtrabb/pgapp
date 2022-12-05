@@ -10,3 +10,7 @@
       = f.submit "rock"
       = f.submit "paper"
       = f.submit "scissors"
+
+  .result
+    - if flash[:result]
+      = flash[:result]
