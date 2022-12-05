@@ -1,0 +1,12 @@
+.game
+  h1 ROCK – PAPER – SCISSORS
+
+  h2 Rock Paper Scissors is a zero sum game that is usually played by two people using their hands and no tools. The idea is to make shapes with an outstretched hand where each shape will have a certain degree of power and will lead to an outcome.
+
+  .play
+    | SELECT YOUR BET
+
+    = form_for :game, url: player_path do |f|
+      = f.submit "rock"
+      = f.submit "paper"
+      = f.submit "scissors"
